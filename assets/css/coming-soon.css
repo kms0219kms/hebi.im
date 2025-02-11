@@ -14,19 +14,34 @@ main section#hero {
   width: 100%; height: 100%;
 }
 
-main section#hero img.mask_banner {
+main section#hero .mask_banner {
+  position: relative;
   width: 100%; height: 100%;
-  object-fit: cover;
 
   filter: brightness(0.6);
   animation: blur 1.5s;
+}
+
+main section#hero .mask_banner img {
+  position: absolute;
+  top: 0; left: 0;
+
+  width: 100%; height: 100%;
+  object-fit: cover;
+
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
 
   -webkit-user-drag: none;
 }
 
+main section#hero .mask_banner img.active {
+  opacity: 1 !important;
+}
+
 @keyframes blur {
   0% {
-      filter: blur(40px) brightness(0.6)
+      filter: blur(30px) brightness(0.6)
   }
 
   to {
