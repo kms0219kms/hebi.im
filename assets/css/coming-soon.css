@@ -15,21 +15,23 @@ main section#hero {
 }
 
 main section#hero img.mask_banner {
-    width: 100%; height: 100%;
-    object-fit: cover;
+  width: 100%; height: 100%;
+  object-fit: cover;
 
-    filter: brightness(0.6);
-    animation: blur 1.5s;
+  filter: brightness(0.6);
+  animation: blur 1.5s;
+
+  -webkit-user-drag: none;
 }
 
 @keyframes blur {
-    0% {
-        filter: blur(40px) brightness(0.6)
-    }
+  0% {
+      filter: blur(40px) brightness(0.6)
+  }
 
-    to {
-        filter: blur(0) brightness(0.6)
-    }
+  to {
+      filter: blur(0) brightness(0.6)
+  }
 }
 
 /* Banner Text for Promotion */
@@ -47,7 +49,7 @@ main section#hero a div {
 }
 
 main section#hero a div.active {
-    opacity: 1 !important;
+  opacity: 1 !important;
 }
 
 main section#hero a h1 {
