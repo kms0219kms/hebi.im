@@ -1,0 +1,12 @@
+/**
+  Hebi.im - Global CSS_Main (main.css)
+
+  Created by: Minsu Kim <minsu.kim@lunaiz.com> on 2025-02-11
+  Updated by: Minsu Kim <minsu.kim@lunaiz.com> on 2025-02-11
+ */
+
+body,
+main {
+   width: 100vw; height: 100vh;
+   background-color: #03040c;
+}

@@ -1,0 +1,24 @@
+/**
+  Hebi.im - Global CSS_Header (header.css)
+
+  Created by: Minsu Kim <minsu.kim@lunaiz.com> on 2025-02-11
+  Updated by: Minsu Kim <minsu.kim@lunaiz.com> on 2025-02-11
+ */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+  
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  
+    padding: 2rem;
+}
+  
+header > div:nth-child(1) img {
+    width: 70px;
+}

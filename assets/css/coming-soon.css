@@ -1,59 +1,41 @@
 /**
-  Hebi.im - Coming Soon Page_Javascript (coming-soon.html)
+  Hebi.im - Coming Soon Page_CSS (coming-soon.css)
 
   Created by: Minsu Kim <minsu.kim@lunaiz.com> on 2025-02-11
   Updated by: Minsu Kim <minsu.kim@lunaiz.com> on 2025-02-11
  */
 
-/* Global */
-.material-symbols-outlined {
-  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 20;
-}
-
 /* Navbar */
-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 10;
-
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  padding: 2rem;
-}
-
-header > div:nth-child(1) img {
-  width: 70px;
-}
+@import url("common/header.css");
+@import url("common/main.css");
 
 /* Main Section - Coming Soon Banner */
-main {
-  height: 100vh;
-  width: 100vw;
+main section#hero {
+  width: 100%; height: 100%;
 }
 
-main::before {
-  content: "";
+main section#hero img.mask_banner {
+    width: 100%; height: 100%;
+    object-fit: cover;
 
-  display: block;
-  height: 100%;
-  width: 100%;
+    filter: brightness(0.6);
+    animation: blur 1.5s;
+}
 
-  background-image: url("/assets/images/banner/20240211_night-sky-patrol-of-tomorrow.webp");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+@keyframes blur {
+    0% {
+        filter: blur(40px) brightness(0.6)
+    }
 
-  filter: brightness(0.6);
+    to {
+        filter: blur(0) brightness(0.6)
+    }
 }
 
 /* Banner Text for Promotion */
-main section#hero div {
+main section#hero a div {
   position: absolute;
-  bottom: 0;
+  bottom: 0; right: 0;
 
   margin: 2rem;
   display: flex;
@@ -64,32 +46,33 @@ main section#hero div {
   transition: opacity 0.5s ease-in-out;
 }
 
-main section#hero div.active {
+main section#hero a div.active {
     opacity: 1 !important;
 }
 
-main section#hero h1 {
+main section#hero a h1 {
   font-size: 2.5rem;
   font-weight: 700;
-  font-family: "Noto Serif JP", "Nympha Trial", "Nanum Myeongjo", serif;
+  font-family: "DM Serif Display", "Nanum Myeongjo", "Noto Serif JP", serif;
 
   color: #fff;
+  word-break: keep-all;
 }
 
-main section#hero p {
+main section#hero a p {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
+  justify-content: flex-end;
+  gap: 1rem;
 
   font-size: 1rem;
   font-weight: 400;
-  font-family: "Pretendard JP Variable", "Plus Jakarta Sans",
-    "Pretendard Variable", sans-serif;
+  font-family: "Plus Jakarta Sans","Pretendard Variable", "Pretendard JP Variable", sans-serif;
 
   color: #fff;
+  word-break: keep-all;
 }
 
-main section#hero .material-symbols-outlined {
-  font-size: 20px;
-  color: #fff;
+main section#hero a img {
+  width: 20px; height: 20px;
 }
