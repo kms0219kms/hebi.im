@@ -7,6 +7,8 @@
 		"preview": "vite preview"
 	},
 	"dependencies": {
+		"@unocss/reset": "^65.4.3",
+		"goober": "^2.1.16",
 		"preact": "^10.25.4",
 		"preact-iso": "^2.9.0",
 		"preact-render-to-string": "^6.5.13"
