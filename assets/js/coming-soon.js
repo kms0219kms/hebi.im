@@ -2,7 +2,7 @@
  * Hebi.im - Coming Soon Page_Javascript (coming-soon.js)
  *
  * Created by: Minsu Kim <minsu.kim@lunaiz.com> on 2025-02-11
- * Updated by: Minsu Kim <minsu.kim@lunaiz.com> on 2025-02-11
+ * Updated by: Minsu Kim <minsu.kim@lunaiz.com> on 2025-02-12
  */
 
 const $hero = document.querySelector('#hero a');
@@ -14,22 +14,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const randomIndex = Math.floor(Math.random() * $bannerList.length);
     $bannerList[randomIndex].classList.add('active');
+
+    afterImageLoad();
 });
 
-// Change $hero locale every 10s with fade-in-out effect
-setInterval(() => { 
-    const $currentLocale = $hero.querySelector('div.active');
-    const $nextLocale = $currentLocale.nextElementSibling || $hero.firstElementChild;
+function afterImageLoad() {
+    $banner.classList.remove('loading');
 
-    $currentLocale.classList.remove('active');
-    $nextLocale.classList.add('active');
-}, 10000);
+    // Change $hero locale every 10s with fade-in-out effect
+    setInterval(() => { 
+        const $currentLocale = $hero.querySelector('div.active');
+        const $nextLocale = $currentLocale.nextElementSibling || $hero.firstElementChild;
 
-// Change $bg every 30s with fade-in-out effect
-setInterval(() => { 
-    const $currentBanner = $banner.querySelector('img.active');
-    const $nextBanner = $currentBanner.nextElementSibling || $banner.firstElementChild;
+        $currentLocale.classList.remove('active');
+        $nextLocale.classList.add('active');
+    }, 10000);
 
-    $currentBanner.classList.remove('active');
-    $nextBanner.classList.add('active');
-}, 30000);
+    // Change $bg every 30s with fade-in-out effect
+    setInterval(() => { 
+        const $currentBanner = $banner.querySelector('img.active');
+        const $nextBanner = $currentBanner.nextElementSibling || $banner.firstElementChild;
+
+        $currentBanner.classList.remove('active');
+        $nextBanner.classList.add('active');
+    }, 30000);
+}

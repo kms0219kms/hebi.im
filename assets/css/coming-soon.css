@@ -2,7 +2,7 @@
   Hebi.im - Coming Soon Page_CSS (coming-soon.css)
 
   Created by: Minsu Kim <minsu.kim@lunaiz.com> on 2025-02-11
-  Updated by: Minsu Kim <minsu.kim@lunaiz.com> on 2025-02-11
+  Updated by: Minsu Kim <minsu.kim@lunaiz.com> on 2025-02-12
  */
 
 /* Navbar */
@@ -18,8 +18,12 @@ main section#hero .mask_banner {
   position: relative;
   width: 100%; height: 100%;
 
-  filter: brightness(0.6);
-  animation: blur 1.5s;
+  filter: blur(0) brightness(0.6);
+  transition: all 1.5s;
+}
+
+main section#hero .mask_banner.loading {
+  filter: blur(100px) brightness(0.6) !important;
 }
 
 main section#hero .mask_banner img {
@@ -37,16 +41,6 @@ main section#hero .mask_banner img {
 
 main section#hero .mask_banner img.active {
   opacity: 1 !important;
-}
-
-@keyframes blur {
-  0% {
-      filter: blur(30px) brightness(0.6)
-  }
-
-  to {
-      filter: blur(0) brightness(0.6)
-  }
 }
 
 /* Banner Text for Promotion */
