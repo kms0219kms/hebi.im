@@ -4,7 +4,7 @@
   Created by: Minsu Kim <minsu.kim@lunaiz.com> on 2025-02-11
   Updated by: Minsu Kim <minsu.kim@lunaiz.com> on 2025-02-12
 
-  Note: 이미지의 경우 CDN으로 옮겨둠 (/assets/images/ -> https://cdn.devayaan.me/hebi-im-images/)
+  Note: 이미지의 경우 CDN으로 옮기도록 image-cdn.js 스크립트 처리
 -->
 
 <!DOCTYPE html>
@@ -39,7 +39,7 @@
     <meta property="og:locale:alternate" content="ko_KR" />
     <meta property="og:locale:alternate" content="en_US" />
 
-    <meta property="og:image" content="https://cdn.devayaan.me/hebi-im-images/og_image.webp" />
+    <meta property="og:image" content="/assets/images/og_image.webp" />
     <meta property="og:image:type" content="image/webp" />
     <meta property="og:image:alt" content="Hebi. | Unofficial Site" />
 
@@ -54,16 +54,16 @@
     <meta name="twitter:title" content="Hebi. | Unofficial Site" />
     <meta name="twitter:description" content="Hebi. | Unofficial Site" />
 
-    <meta name="twitter:image" content="https://cdn.devayaan.me/hebi-im-images/og_image.webp" />
+    <meta name="twitter:image" content="/assets/images/og_image.webp" />
     <meta name="twitter:image:type" content="image/webp" />
     <meta name="twitter:image:alt" content="Hebi. | Unofficial Site" />
 
     <!-- Favicons -->
-    <link rel="icon" href="https://cdn.devayaan.me/hebi-im-images/favicon.webp" />
+    <link rel="icon" href="/assets/images/favicon.webp" />
 
     <!-- Image preload -->
-    <link rel="preload" as="image" href="https://cdn.devayaan.me/hebi-im-images/banner/20240211_night-sky-patrol-of-tomorrow_001.webp">
-    <link rel="preload" as="image" href="https://cdn.devayaan.me/hebi-im-images/banner/20240211_night-sky-patrol-of-tomorrow_002.webp">
+    <link rel="preload" as="image" href="/assets/images/banner/20240211_night-sky-patrol-of-tomorrow_001.webp">
+    <link rel="preload" as="image" href="/assets/images/banner/20240211_night-sky-patrol-of-tomorrow_002.webp">
 
     <!-- Tailwind CSS-style reset -->
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
@@ -100,7 +100,7 @@
     <header>
       <div>
         <a href="/" title="Hebi.">
-          <img src="https://cdn.devayaan.me/hebi-im-images/symbol.webp" alt="Hebi." draggable="false" />
+          <img src="/assets/images/symbol.webp" alt="Hebi." draggable="false" />
         </a>
       </div>
     </header>
@@ -109,8 +109,8 @@
     <main>
       <section id="hero">
         <div class="mask_banner loading">
-          <img src="https://cdn.devayaan.me/hebi-im-images/banner/20240211_night-sky-patrol-of-tomorrow_001.webp" alt="" />
-          <img src="https://cdn.devayaan.me/hebi-im-images/banner/20240211_night-sky-patrol-of-tomorrow_002.webp" alt="" />
+          <img src="/assets/images/banner/20240211_night-sky-patrol-of-tomorrow_001.webp" alt="" />
+          <img src="/assets/images/banner/20240211_night-sky-patrol-of-tomorrow_002.webp" alt="" />
         </div>
 
         <a href="https://youtu.be/gMjU5XJnc7E?si=P1gYM8CKKfaSXsBO" target="_blank" rel="noopener noreferrer">
@@ -141,6 +141,13 @@
       </section>
     </main>
 
-    <script src="/assets/js/coming-soon.js"></script>
+    <!-- Logger JS -->
+    <script type="module" src="/assets/js/lib/logger.js"></script>
+
+    <!-- Image CDN -->
+    <script type="module" src="/assets/js/lib/image-cdn.js"></script>
+
+    <!-- Page-specific JS -->
+    <script type="module" src="/assets/js/coming-soon.js" async defer></script>
   </body>
 </html>
