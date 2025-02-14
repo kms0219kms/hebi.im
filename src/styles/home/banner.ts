@@ -1,22 +1,16 @@
-import { keyframes, styled } from "goober";
+import { styled } from "goober";
 
-const MaskIntroAnimation = keyframes`
-  0% {
-    filter: blur(30px) brightness(0.6)
-  }
-
-  to {
-    filter: blur(0) brightness(0.6)
-  }
-`;
-
-const MaskBanner = styled("div")`
+const MaskBanner = styled("div")<{ $loading: boolean }>`
   position: relative;
   width: 100%;
   height: 100%;
 
-  filter: brightness(0.6);
-  animation: ${MaskIntroAnimation} 1.5s;
+  ${({ $loading }) =>
+    !$loading
+      ? "filter: blur(0) brightness(0.6)"
+      : "filter: blur(100px) brightness(0.6);"};
+
+  transition: all 1.5s;
 `;
 
 const MaskBannerImage = styled<{ $active: boolean }>("img")`

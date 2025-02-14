@@ -14,10 +14,10 @@ import { shouldForwardProp } from "goober/should-forward-prop";
 import "@unocss/reset/tailwind.css";
 import "./styles/global.css";
 
-import { Header } from "./components/Header.jsx";
+import Header from "./components/Header.jsx";
 
-import { Home } from "./pages/Home/index.jsx";
-import { NotFound } from "./pages/_404.jsx";
+import Home from "./pages/Home/index.jsx";
+import NotFound from "./pages/_404.jsx";
 
 // goober's needs to know how to render the `styled` nodes.
 // So to let it know, we run the `setup` function with the

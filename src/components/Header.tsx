@@ -1,33 +1,23 @@
 import { useLocation } from "preact-iso";
-import { styled } from "goober";
+import { StyledHeader } from "../styles/common";
 
-const StyledHeader = styled("header")`
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 10;
+import {
+  SHOULD_USE_CDN,
+  IMAGE_CDN_URL,
+  LOCAL_IMAGE_URL,
+} from "../constants/cdn";
 
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  padding: 2rem;
-`;
-
-const StyledSymbol = styled("img")`
-  width: 70px;
-`;
-
-export function Header() {
+export default function Header() {
   const { url } = useLocation();
 
   return (
     <StyledHeader>
       <div>
         <a href="/" title="Hebi.">
-          <StyledSymbol
-            src="https://cdn.devayaan.me/hebi-im-images/symbol.webp"
+          <StyledHeader.Symbol
+            src={`${
+              SHOULD_USE_CDN ? IMAGE_CDN_URL : LOCAL_IMAGE_URL
+            }/symbol.webp`}
             alt="Hebi."
             draggable={false}
           />
